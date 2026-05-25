@@ -8,12 +8,10 @@ class Skeg < Formula
   # representative of the published bench numbers.
   depends_on arch: :arm64
 
-  on_macos do
+  if OS.mac?
     url "https://github.com/skegdb/skeg/releases/download/v#{version}/skeg-v#{version}-aarch64-apple-darwin.tar.gz"
     sha256 "9237ec451e1bcd882471c1fbbaa9354dff7e6f332542d9f90d059f913cb3b5f4"
-  end
-
-  on_linux do
+  elsif OS.linux?
     url "https://github.com/skegdb/skeg/releases/download/v#{version}/skeg-v#{version}-aarch64-unknown-linux-gnu.tar.gz"
     sha256 "2c79f278d4cacf99d441fb266c11afdbaa3f54d23f7bc91690f7bc863d5e8529"
   end
