@@ -14,7 +14,7 @@ class SkegCli < Formula
     sha256 "ae24fdd06aef424f4d1630b3625f9ac41e93f58b033f039ee2b064e07cab2c46"
   elsif OS.linux?
     url "https://github.com/skegdb/skeg-cli/releases/download/v#{version}/skeg-cli-v#{version}-aarch64-unknown-linux-gnu.tar.gz"
-    sha256 "5f7a67e0fc37f017c1a5c0ad4a95f8dba999e75518b6d9b2b70d436b314e37bd"
+    sha256 "7871380cfc24eedc594df443bdd09a967b0bf67a52574a69e8a8b0f637813081"
   end
 
   def install
