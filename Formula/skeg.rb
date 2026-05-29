@@ -1,7 +1,7 @@
 class Skeg < Formula
   desc "RAM-frugal KV + vector store for Personal AI inference"
   homepage "https://github.com/skegdb/skeg"
-  version "0.2.0"
+  version "0.2.1"
   license "Apache-2.0"
 
   # aarch64 only. NEON SIMD path; x86_64 fallback is scalar and not
@@ -10,10 +10,10 @@ class Skeg < Formula
 
   if OS.mac?
     url "https://github.com/skegdb/skeg/releases/download/v#{version}/skeg-v#{version}-aarch64-apple-darwin.tar.gz"
-    sha256 "8ed43dbe1d0e140d0cd2d028d022f534d76b913dbcec78ffed7f894a70090eb0"
+    sha256 "c9d8ced048d06f1f062b52f26a5e7d1d8b4d28ad1f04c4b56920b36e8b1461b2"
   elsif OS.linux?
     url "https://github.com/skegdb/skeg/releases/download/v#{version}/skeg-v#{version}-aarch64-unknown-linux-gnu.tar.gz"
-    sha256 "efe92537371d3ae496874a6f94757abf2e1f45c67eb5dc93d38e1c4a31914279"
+    sha256 "49f056fd5c22abc66b0627453b28bf83670b67f3153328cd2166818b70a687ae"
   end
 
   def install
