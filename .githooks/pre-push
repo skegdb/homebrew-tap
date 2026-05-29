@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Pre-push gate: brew style + audit per formula. Skip with SKIP_PREPUSH=1.
+set -euo pipefail
+[[ "${SKIP_PREPUSH:-0}" == "1" ]] && { echo "pre-push: skipped" >&2; exit 0; }
+step() { printf "\n\033[1;36m▸ pre-push: %s\033[0m\n" "$1" >&2; }
+fail() { printf "\n\033[1;31m✗ pre-push failed at: %s\033[0m\n" "$1" >&2; exit 1; }
+if ! command -v brew >/dev/null 2>&1; then
+    echo "pre-push: brew not found, skipping" >&2
+    exit 0
+fi
+for f in Formula/*.rb; do
+    [[ -e "$f" ]] || continue
+    step "brew style $f"
+    brew style "$f" || fail "brew style $f"
+    step "brew audit --strict --formula $f"
+    brew audit --strict --formula "$f" || fail "brew audit $f"
+done
+printf "\n\033[1;32m✓ pre-push gate passed\033[0m\n" >&2
