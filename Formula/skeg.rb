@@ -10,10 +10,10 @@ class Skeg < Formula
 
   if OS.mac?
     url "https://github.com/skegdb/skeg/releases/download/v#{version}/skeg-v#{version}-aarch64-apple-darwin.tar.gz"
-    sha256 "f14c50533f8bf3543c4b0066da5553b67265a747d49a4e78fc29f370efb69d7e"
+    sha256 "1c90e1d41cb6d969d70ed53f62ed9f2ac772141eef57fd91010f0d8f2f3750ed"
   elsif OS.linux?
     url "https://github.com/skegdb/skeg/releases/download/v#{version}/skeg-v#{version}-aarch64-unknown-linux-gnu.tar.gz"
-    sha256 "e4a33edd336f15ca7e406598bf8ca88a97eb437224aa107767a03da6ba8864fc"
+    sha256 "e7da2127c9692db527e0cce6b1399570f2a9d6a07e9b950e83100f30df9a7aa7"
   end
 
   def install
